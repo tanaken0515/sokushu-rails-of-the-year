@@ -1,2 +1,24 @@
-# sokushu-rails-of-the-year
-https://www.amazon.co.jp/現場で使える-Ruby-Rails-5速習実践ガイド-大場寧子/dp/4839962227
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
