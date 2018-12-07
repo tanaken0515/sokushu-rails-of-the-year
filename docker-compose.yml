@@ -3,6 +3,7 @@ version: "3"
 services:
   web:
     build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
     ports:
       - "3000:3000"
     environment:
@@ -13,7 +14,7 @@ services:
     links:
       - db
     volumes:
-      - ".:/app" #共有フォルダの設定
+      - ".:/app"
     stdin_open: true
 
   db:
@@ -23,3 +24,5 @@ services:
     environment:
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=mysecretpassword1234"
+    volumes:
+      - "./tmp/db:/var/lib/postgresql/data"
