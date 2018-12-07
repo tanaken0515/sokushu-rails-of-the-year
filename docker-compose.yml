@@ -14,7 +14,7 @@ services:
     links:
       - db
     volumes:
-      - ".:/app" #共有フォルダの設定
+      - ".:/app"
     stdin_open: true
 
   db:
@@ -24,3 +24,5 @@ services:
     environment:
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=mysecretpassword1234"
+    volumes:
+      - "./tmp/db:/var/lib/postgresql/data"
