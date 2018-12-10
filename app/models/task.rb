@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  belongs_to :user
+
   before_validation :set_nameless_name
   validates :name,
             presence: true,
