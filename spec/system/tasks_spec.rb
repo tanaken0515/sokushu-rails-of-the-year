@@ -43,4 +43,47 @@ describe 'タスク管理機能', type: :system do
       it_behaves_like 'ユーザーAが作成したタスクが表示される'
     end
   end
+
+  describe '新規作成機能' do
+    let(:login_user) {user_a}
+
+    before do
+      visit new_task_path
+      fill_in '名称', with: task_name
+      click_button '登録する'
+    end
+
+    context '新規作成画面で名称を入力したとき' do
+      let(:task_name) {'テストタスク'}
+
+      it '正常に登録される' do
+        expect(page).to have_selector '.alert-success', text: 'テストタスク'
+      end
+    end
+
+    context '新規作成画面で名称を入力しなかったとき' do
+      let(:task_name) {''}
+
+      it '"名前なし"で登録される' do
+        expect(page).to have_selector '.alert-success', text: '名前なし'
+      end
+
+      it 'エラーとなる' do
+        pending '実際のTaskモデルの仕様と書籍中で想定している仕様が異なるためテストNGになる(が "within" の学習のために残す)'
+        within '#error_explanation' do
+          expect(page).to have_content '名称を入力してください'
+        end
+      end
+    end
+
+    context '新規作成画面で名称を31文字以上入力したとき' do
+      let(:task_name) {'あああああいいいいいうううううえええええおおおおおかかかかかき'}
+
+      it 'エラーとなる' do
+        within '#error_explanation' do
+          expect(page).to have_content '名称は30文字以内で入力してください'
+        end
+      end
+    end
+  end
 end
