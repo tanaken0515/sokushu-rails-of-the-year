@@ -16,7 +16,7 @@ describe 'タスク管理機能', type: :system do
       end
 
       it 'ユーザーAが作成したタスクが表示される' do
-        # 確認
+        expect(page).to have_content '最初のタスク'
       end
     end
   end
