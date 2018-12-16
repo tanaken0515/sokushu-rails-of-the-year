@@ -75,5 +75,15 @@ describe 'タスク管理機能', type: :system do
         end
       end
     end
+
+    context '新規作成画面で名称を31文字以上入力したとき' do
+      let(:task_name) {'あああああいいいいいうううううえええええおおおおおかかかかかき'}
+
+      it 'エラーとなる' do
+        within '#error_explanation' do
+          expect(page).to have_content '名称は30文字以内で入力してください'
+        end
+      end
+    end
   end
 end
