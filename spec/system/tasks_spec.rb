@@ -64,7 +64,12 @@ describe 'タスク管理機能', type: :system do
     context '新規作成画面で名称を入力しなかったとき' do
       let(:task_name) {''}
 
+      it '"名前なし"で登録される' do
+        expect(page).to have_selector '.alert-success', text: '名前なし'
+      end
+
       it 'エラーとなる' do
+        pending '実際のTaskモデルの仕様と書籍中で想定している仕様が異なるためテストNGになる(が "within" の学習のために残す)'
         within '#error_explanation' do
           expect(page).to have_content '名称を入力してください'
         end
