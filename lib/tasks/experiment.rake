@@ -12,7 +12,7 @@ namespace :experiment do
           end
         end
 
-        r.report "injuct" do
+        r.report "inject" do
           number_of_trial.times do
             Order.all.inject(0){|sum, order| sum + order.price * order.quantity}
           end
@@ -39,7 +39,7 @@ namespace :experiment do
           end
         end
 
-        r.report "injuct" do
+        r.report "inject" do
           number_of_trial.times do
             orders.inject(0){|sum, order| sum + order.price * order.quantity}
           end
