@@ -26,3 +26,9 @@ services:
       - "POSTGRES_PASSWORD=mysecretpassword1234"
     volumes:
       - "./tmp/db:/var/lib/postgresql/data"
+
+  smtp:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
