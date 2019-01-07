@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  has_one_attached :image
+
   belongs_to :user
 
   before_validation :set_nameless_name
