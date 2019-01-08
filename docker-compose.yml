@@ -13,6 +13,7 @@ services:
       - "DATABASE_PASSWORD=mysecretpassword1234"
     links:
       - db
+      - smtp
     volumes:
       - ".:/app"
     stdin_open: true
