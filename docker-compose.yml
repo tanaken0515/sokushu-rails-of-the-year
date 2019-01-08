@@ -13,6 +13,7 @@ services:
       - "DATABASE_PASSWORD=mysecretpassword1234"
     links:
       - db
+      - redis
     volumes:
       - ".:/app"
     stdin_open: true
@@ -32,3 +33,8 @@ services:
     ports:
       - "1080:1080"
       - "1025:1025"
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
