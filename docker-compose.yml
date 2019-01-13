@@ -11,6 +11,7 @@ services:
       - "DATABASE_PORT=5432"
       - "DATABASE_USER=postgres"
       - "DATABASE_PASSWORD=mysecretpassword1234"
+      - "REDIS_URL=redis://redis:6379"
     links:
       - db
       - redis
