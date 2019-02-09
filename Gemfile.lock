@@ -93,6 +93,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    heavens_door (0.1.5)
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
@@ -275,6 +276,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   factory_bot_rails (~> 4.11)
+  heavens_door (>= 0.1.4)
   html2slim
   jbuilder (~> 2.5)
   kaminari
